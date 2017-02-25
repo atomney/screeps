@@ -1,0 +1,18 @@
+# Manually spawn a creep
+Game.spawns['ROOT'].createCreep( [WORK, CARRY, MOVE], 'Builder1' );
+
+# Manually spawn a creep with role
+Game.spawns['ROOT'].createCreep([WORK,CARRY,MOVE,MOVE,MOVE], undefined, {role: 'omnicreep'})
+
+# Manually change a creeps memory
+Game.creeps['Harvester1'].memory.role = 'harvester';
+Game.creeps['Upgrader1'].memory.role = 'upgrader';
+
+# Kill a creep
+Game.creeps['Harvester1'].suicide()
+
+# Activate safe mode in room
+Game.spawns['Spawn1'].room.controller.activateSafeMode();
+
+# Place tower foundation at location
+Game.spawns['Spawn1'].room.createConstructionSite( 23, 22, STRUCTURE_TOWER );
